@@ -25,7 +25,8 @@ try{
        bat 'terraform plan' 
     }    
   } 
-  
+ }
+}
    stage('apply') {
     node {
        bat 'terraform apply -auto-approve' 
