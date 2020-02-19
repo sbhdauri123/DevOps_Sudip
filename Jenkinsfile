@@ -15,6 +15,19 @@ try{
     }    
   } 
   
+  stage('plan') {
+    node {
+       bat 'terraform plan' 
+    }    
+  } 
+  
+   stage('apply') {
+    node {
+       bat 'terraform apply -auto-approve' 
+    }    
+  } 
+  
+  
 }
  
 catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException flowError) {
