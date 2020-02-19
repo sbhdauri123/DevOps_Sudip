@@ -4,7 +4,7 @@ String credentialid = 'mySP'
 try{
   stage('checkout') {
     node {
-        clearWs()
+        cleanWs()
         checkout scm      
     }    
   }
