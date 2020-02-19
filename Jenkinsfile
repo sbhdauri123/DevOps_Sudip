@@ -16,6 +16,6 @@ try{
   }
 }
  
-catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException flowError() {
+catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException flowError) {
     currentBuild.result ='ABORTED'
   }
