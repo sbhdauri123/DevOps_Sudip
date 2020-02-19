@@ -11,7 +11,7 @@ try{
   
   stage('init') {
     node {
-       sh 'terraform init' 
+       bat 'terraform init' 
     }    
   } 
   
