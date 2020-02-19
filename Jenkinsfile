@@ -17,15 +17,9 @@ try{
   
   stage('plan') {
     node {
-        withCredentials([azureServicePrincipal(credentialsId: 'mySP',
-                                    subscriptionIdVariable: 'subscriptionId',
-                                    clientIdVariable: 'clientId',
-                                    clientSecretVariable: 'certificateId',
-                                    tenantIdVariable: 'tenant')]) 
-      //{
-    //sh 'az login --service-principal -u $clientId -p $certificateId -t $tenant'
-//}
-      
+      withCredentials([azureServicePrincipal('mySP')]) {
+    sh 'az login --service-principal -u $AZURE_CLIENT_ID -p $AZURE_CLIENT_SECRET -t $AZURE_TENANT_ID'
+}
          bat 'terraform plan'
     
     }
