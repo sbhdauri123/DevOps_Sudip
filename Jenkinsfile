@@ -21,9 +21,10 @@ try{
                                     subscriptionIdVariable: 'subscriptionId',
                                     clientIdVariable: 'clientId',
                                     clientSecretVariable: 'certificateId',
-                                    tenantIdVariable: 'tenant')]) {
-    sh 'az login --service-principal -u $clientId -p $certificateId -t $tenant'
-}
+                                    tenantIdVariable: 'tenant')]) 
+      //{
+    //sh 'az login --service-principal -u $clientId -p $certificateId -t $tenant'
+//}
       
          bat 'terraform plan'
     
